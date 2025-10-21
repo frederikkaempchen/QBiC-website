@@ -1,25 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
-
-
 :root{
-  --search-box-max-width: 600px; /* standard: 600px */
-  --search-box-focus-shadow:0 4px 10px rgba(74,144,226,0.3);
-  
-  --focus-color: rgb(74,144,226);
+    /* colours */
+    --red-primary: rgba(161, 30, 59, 1);
+    --grey-primary: rgba(50, 65, 75, 1);
+    --grey-secondary: rgba(84, 89, 95, 1);
+    --white-primary:rgba(245, 245, 245, 1);
+    --lightblue-primary: rgba(110, 193, 228, 1);
 
-  --search-box-font-size: 18px;
+    /* fonts */
+    --font-family-primary: 'Open Sans', sans-serif;
+    --font-headings-primary: 800 23px var(--font-family-primary);
+    --font-headings-secondary: 300 43px var(--font-family-primary);
+    --font-text-primary: 400 16px var(--font-family-primary);
 
-  --gap-between-papers: 15px;
-  --paper-title-font-size: 20px; 
-  --paper-title-margin-bottom: 15px; 
-  --paper-detail-font-size: 13px;
-  --paper-detail-margin-bottom: 10px;
-  --paper-detail-line-height: 1.3;
-  
-  --team-name-font-size: 40px;
-  --team-name-margin-bottom: 16px;
+    /* general */
+    --max-width-div: 1140px;
+
+    /* research styles */
+    --search-box-max-width: 600px;
+    --search-box-focus-shadow:0 4px 10px rgba(74,144,226,0.3);
+    --search-box-font-size: 18px;
+    --focus-color: rgb(74,144,226);
+
+    --gap-between-papers: 15px;
+    --paper-title-font-size: 20px; 
+    --paper-title-margin-bottom: 15px; 
+    --paper-detail-font-size: 13px;
+    --paper-detail-margin-bottom: 10px;
+    --paper-detail-line-height: 1.3;
+
+    /* teams */
+    --team-name-font-size: 40px;
+    --team-name-margin-bottom: 16px;
 
     --team-description-font-size: 16px;
     --team-description-margin-bottom: 32px;
@@ -36,23 +49,50 @@
     --member-title-font-size: 16px; 
     --member-title-margin-bottom: 5px;
 
+    /* email icon */
     --email-icon-scale: 1;
     --email-icon-color: white;
     --email-icon-hover-color: rgb(167, 229, 255);
 }
-body {
-  font-family: 'Inter', Arial, sans-serif;
-  background: #ffffff;
-  color: #333;
-  margin: 30px;
-  min-height: 100vh;
-  
-  display: flex;
-  flex-direction: column;
-  margin: 0;
+
+*, *::before, *::after {
+  font: var(--font-text-primary);
+  margin: 0 0 0 0 ;
   padding: 0 0 0 0;
-  line-height: 1.4;
 }
+
+body{
+    font: var(--font-text-primary);
+    color: var(--grey-primary);
+    background: #ffffff;
+    line-height: 24px;
+    display: flex;
+    justify-content: flex-start;
+    justify-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1{
+    font: var(--font-headings-primary);
+    color: var(--red-primary);
+    text-transform: uppercase;
+}
+
+h2{
+    font: var(--font-headings-secondary);
+    color: var(--red-primary);
+}
+
+p, div{
+    font: var(--font-text-primary);
+    color: var(--grey-primary);
+}
+
+div{
+  max-width: min(100%, var(--max-width-div));
+}
+
 
 button {
   padding: 12px 20px;
@@ -78,11 +118,9 @@ button {
   padding: 0px;
 }
 
-
 /* Wrapper for layout spacing */
 #year-filter-wrapper {
   position: relative;
-  font-family: 'Inter', sans-serif;
 }
 
 /* Dropdown button styling */
@@ -159,12 +197,12 @@ button {
 
 #year-filter-list li:hover,
 #year-filter-list li:focus {
-  background-color: #f0f0f0;
+  background-color: var(--white-primary);
 }
 
 #year-filter-list li[aria-selected="true"] {
-  background-color: rgb(204, 51, 102);
-  color: white;
+  background-color: var(--red-primary);
+  color: var(--white-primary);
 }
 
 /* don't change name without checking js*/
@@ -177,8 +215,8 @@ button {
   border: none;
   border-radius: 10px;
   box-shadow: 0 1px 5px rgba(0,0,0,0.15) !important;
-  background: #fff;
-  color: #333;
+  background: var(--white-primary);
+  color: var(--grey-primary);
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -278,14 +316,13 @@ button {
   outline: none;
 }
 
-
 #papers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 32%)) !important;
   gap: var(--gap-between-papers);
-  max-width: 100%; 
-  margin: 0 auto;
   justify-content: center;
+  justify-items: flex-start;
+  align-self: center;
 }
 
 /* don't change name without checking js*/
@@ -319,7 +356,6 @@ button {
   line-height: 1.2;
   margin-bottom: var(--paper-title-margin-bottom) !important;
   color: rgb(161, 30, 59);
-  font: Arial, sans-serif;
 }
 
 /* don't change name without checking js*/
@@ -329,7 +365,6 @@ button {
   line-height: var(--paper-detail-line-height) !important;
   margin-bottom: var(--paper-detail-margin-bottom) !important;
   color: rgb(50, 65, 75);  /* light grey for all paper details */
-  font: Arial;
 }
 
 /* don't change name without checking js*/

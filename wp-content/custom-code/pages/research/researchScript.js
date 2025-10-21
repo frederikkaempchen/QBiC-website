@@ -1,4 +1,4 @@
-fetch('/wp-content/research-custom/data/papersData.json')
+fetch('/wp-content/custom-code/data/json/papersData.json')
     .then(res => res.json())
       .then(papers => {
         const maxNumberOfAuthors = 20; //how many authors are maximally displayed per paper
