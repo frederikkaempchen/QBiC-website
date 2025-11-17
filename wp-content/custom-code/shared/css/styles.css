@@ -450,7 +450,9 @@ button {
     max-width: 250;
     max-height: 300;
     width: 100%;
-    height: auto;
+    aspect-ratio: 5 / 6;
+    object-fit: cover;
+    object-position: center;
     margin-bottom: var(--member-image-margin-bottom);
     margin-top: 0;
 }
