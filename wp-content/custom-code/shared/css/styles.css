@@ -449,7 +449,8 @@ button {
 .member-image {
     max-width: 250;
     max-height: 300;
-    flex: auto;
+    width: 100%;
+    height: auto;
     margin-bottom: var(--member-image-margin-bottom);
     margin-top: 0;
 }
